@@ -13,7 +13,7 @@ type ServicesFormProps = UserData & {
 const ServicesForm: FC<ServicesFormProps> = ({date, service, updateFields}) => {
 
   return(
-    <FormWrapper title="User Details">
+    <FormWrapper title="What do you need?">
         <label>Select date</label>
         <input type="text" autoFocus required value={date} onChange={e => updateFields({date: e.target.value})}/>
         <label>Select service</label>

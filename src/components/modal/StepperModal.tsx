@@ -1,6 +1,4 @@
 'use client'
-import AccountForm from '@/components/AccountForm'
-import AddressForm from '@/components/AddressForm'
 import UserForm from '@/components/UserForm'
 import AppointmentModal from '@/components/modal/AppointmentModal'
 import { useMultistepForm } from '@/lib/useMultistepForm'
@@ -56,8 +54,8 @@ function onSubmit(e:FormEvent) {
 
   return (
     <div>
-  <div className='relative mx-auto bg-white border border-black p-2 m-5'>
-    <h2 className='text-center font-bold'>Create an Appointment</h2>
+          <h2 className='text-center font-bold'>Create an Appointment</h2>
+  <div className='relative mx-auto bg-white border-t border-black p-2 m-5'>
 
     <form onSubmit={onSubmit}>
       <div className='absolute top-0 right-0'>

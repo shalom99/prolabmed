@@ -14,9 +14,9 @@ type UserFormProps = UserData & {
 const UserForm: FC<UserFormProps> = ({firstName, lastName, age, updateFields}) => {
 
   return(
-    <FormWrapper title="User Details">
+    <FormWrapper title="Patient Details">
         <label>First Name</label>
-        <input type="text" autoFocus required value={firstName} onChange={e => updateFields({firstName: e.target.value})}/>
+        <input className="border" type="text" autoFocus required value={firstName} onChange={e => updateFields({firstName: e.target.value})}/>
         <label>Last Name</label>
         <input type="text" required value={lastName} onChange={e => updateFields({lastName: e.target.value})} />
         <label>Age</label>
