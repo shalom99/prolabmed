@@ -44,7 +44,7 @@ const Services_Card: FC<Services_cardProps> = ({icon, title, description, lightb
         </div>
         <div className="absolute bottom-10 left-0 right-0 flex items-center justify-center gap-2">
             <div className={`bg-red-700 duration-1000 rounded-full w-[25px] h-[25px]`}></div>
-            <Link href="/development" className="font-bold text-lg text-primarytext">READ MORE</Link>
+            <Link href="/development" className="font-bold text-lg text-accent">READ MORE</Link>
         </div>
     </div>
   )
