@@ -28,7 +28,7 @@ const AppointmentModal: FC<AppointmentModalProps> = ({
   return createPortal(
     <>
       <div className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-xl z-30" />
-      <div className="fixed top-10 left-5 right-5 bottom-10 lg:left-[50%] lg:top-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] bg-white p-5 flex flex-col gap-5 z-50">
+      <div className="fixed top-10 left-5 right-5 bottom-10 lg:left-[50%] lg:top-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] bg-white p-5 flex flex-col gap-5 z-50 shadow-2xl">
         <button className="flex justify-end" onClick={onCloseModal}>
           <BiX size={50} className="text-primarytext" />
         </button>
