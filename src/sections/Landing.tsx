@@ -5,8 +5,9 @@ import { RiUserStarLine } from "react-icons/ri";
 import { GiOnTarget } from "react-icons/gi";
 import { BsAward } from "react-icons/bs";
 import { Fade, Slide } from "react-awesome-reveal";
-import AppointmentModal from "@/components/modal/AppointmentModal";
-import StepperModal from '@/components/modal/StepperModal';
+import AppointmentModal from '@/components/modals/AppointmentModal';
+
+
 
 export default function Landing() {
   const [isOpen, setIsOPen] = useState(false)  
@@ -84,9 +85,9 @@ export default function Landing() {
     </div>
 
 
-  <AppointmentModal open={isOpen} onClose={() => setIsOPen(false)}>
-    <StepperModal /> 
-  </AppointmentModal>
+  <AppointmentModal open={isOpen} onClose={() => setIsOPen(false)} />
+
+
 
 </>
   );

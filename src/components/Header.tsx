@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BiMenuAltRight, BiX, BiDialpad } from "react-icons/bi";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import AppointmentModal from "./modal/AppointmentModal";
-import StepperModal from "./modal/StepperModal";
+import AppointmentModal from "./modals/AppointmentModal";
+import StepperModal from "./modals/StepperModal";
 
 
 
@@ -152,9 +152,8 @@ export default function Header() {
       </div>
     </header>
 
-<AppointmentModal open={isOpen} onClose={() => setIsOPen(false)}>
-<StepperModal /> 
-</AppointmentModal>
+<AppointmentModal open={isOpen} onClose={() => setIsOPen(false)} />
+
 </>
   );
 }

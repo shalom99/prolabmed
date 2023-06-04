@@ -1,6 +1,6 @@
 "use client";
 import UserForm from "@/components/UserForm";
-import AppointmentModal from "@/components/modal/AppointmentModal";
+
 import { useMultistepForm } from "@/lib/useMultistepForm";
 import { FC, FormEvent, useState } from "react";
 import ServicesForm from "@/components/ServicesForm";
@@ -54,7 +54,7 @@ const StepperModal: FC<pageProps> = ({}) => {
   }
 
   return (
-    <div className="relative h-full">
+    <div className="relative h-full bg-red-200">
       <div className="grid grid-cols-3 gap-5 my-5">
         <div className="border-b-4 border-accent" />
         <div className="border-b-2 border-black" />

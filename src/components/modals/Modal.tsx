@@ -3,12 +3,14 @@ import { FC, ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { BiX } from "react-icons/bi";
 
-type AppointmentModalProps = {
+type ModalProps = {
+  title: string
   open: boolean;
   children: ReactNode;
   onClose: () => void;
 };
-const AppointmentModal: FC<AppointmentModalProps> = ({
+const Modal: FC<ModalProps> = ({
+  title,
   open,
   children,
   onClose,
@@ -27,11 +29,16 @@ const AppointmentModal: FC<AppointmentModalProps> = ({
 
   return createPortal(
     <>
+      {/* modal background */}
       <div className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-xl z-30" />
-      <div className="fixed top-10 left-5 right-5 bottom-10 lg:left-[50%] lg:top-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] bg-white p-5 flex flex-col gap-5 z-50 shadow-2xl">
-        <button className="flex justify-end" onClick={onCloseModal}>
-          <BiX size={50} className="text-primarytext" />
-        </button>
+      {/* modal content */}
+      <div className="fixed top-10 left-5 right-5 bottom-10 lg:left-[50%] lg:top-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] flex flex-col gap-5 z-50 shadow-2xl bg-white rounded-md">
+        <div className="border-b border-gray-200 flex justify-between items-center">
+          <button className="" onClick={onCloseModal}>
+            <BiX size={50} className="text-primarytext" />
+          </button>
+          <h3 className="text-center grow">{title}</h3>
+        </div>
         {children}
       </div>
     </>,
@@ -39,4 +46,4 @@ const AppointmentModal: FC<AppointmentModalProps> = ({
   );
 };
 
-export default AppointmentModal;
+export default Modal;
