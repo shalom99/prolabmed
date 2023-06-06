@@ -2,12 +2,13 @@
 import { FC, useState, FormEvent } from "react";
 import { createPortal } from "react-dom";
 import { BiX } from "react-icons/bi";
-import StepperModal from "./StepperModal";
+
 import UserForm from "../UserForm";
 import ServicesForm from "../ServicesForm";
 import ConfirmForm from "../ConfirmForm";
 import { useMultistepForm } from "@/hooks/useMultistepForm";
 import { FormData } from "@/types";
+import toast from 'react-hot-toast'
 
 
 const INITIAL_DATA = {
@@ -18,6 +19,7 @@ const INITIAL_DATA = {
   password: "",
   date: "",
   service: "",
+  request: "",
 };
 
 type ModalProps = {
@@ -36,7 +38,7 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
       return { ...prev, ...fields };
     });
   }
-  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next } =
+  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next, resetStep } =
     useMultistepForm([
       <UserForm {...data} updateFields={updateFields} />,
       <ServicesForm {...data} updateFields={updateFields} />,
@@ -48,8 +50,10 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
     if (!isLastStep) {
       return next();
     } else {
-      alert("Success Appointment Creation");
+      toast.success("Appointment Creation Success");
       setData(INITIAL_DATA);
+      resetStep();
+      onCloseModal();
     }
   }
 
@@ -63,8 +67,13 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
 
   function onCloseModal() {
     document.body.style.overflow = "visible";
+    setData(INITIAL_DATA)
+    resetStep();
     onClose();
   }
+
+
+
 
   return createPortal(
     <>
@@ -74,7 +83,9 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
           {/* modal content */}
 
           <div className="flex justify-between h-full items-center py-4">
-              <BiX size={25} className="ml-5 text-primarytext" />
+            <button onClick={onCloseModal}>
+              <BiX size={25}  className="ml-5 text-primarytext" />
+              </button>
             <h3 className="grow text-center">{title}</h3>
           </div>
 
@@ -89,16 +100,17 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
 
             <div className="mx-auto h-auto ">
               <form onSubmit={onSubmit}>
-                <div className="absolute top-0 right-0">
+
+                {/* <div className="absolute top-0 right-0">
                   {currentStepIndex + 1} / {steps.length}
-                </div>
+                </div> */}
 
                 {step}
 
-                <div className="grid grid-cols-2 gap-5 mt-5 bg-blue-200">
+                <div className="grid grid-cols-1 gap-5 mt-5">
                   {!isFirstStep && (
                     <button
-                      className="bg-accent px-5 py-2 text-white rounded-lg"
+                      className="bg-red-400 px-5 py-2 text-white rounded-lg"
                       type="button"
                       onClick={back}
                     >
@@ -109,7 +121,7 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
                     className="bg-accent px-5 py-2 text-white rounded-lg"
                     type="submit"
                   >
-                    {isLastStep ? "Finish" : "Next"}
+                    {isLastStep ? "Create Appointment!" : "Next"}
                   </button>
                 </div>
               </form>

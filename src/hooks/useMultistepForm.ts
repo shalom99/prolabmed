@@ -24,6 +24,10 @@ function goTo(index: number){
     setCurrentStepIndex(index)
 }
 
+function resetStep() {
+    setCurrentStepIndex(0)
+}
+
  
 return {
     currentStepIndex,
@@ -33,6 +37,7 @@ return {
     isLastStep: currentStepIndex === steps.length -1,
     goTo,
     next,
-    back
+    back,
+    resetStep
 }
 }

@@ -1,27 +1,21 @@
 import { FC } from 'react'
 
-type InputProps = {
+
+type InputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>,HTMLInputElement> & {
   id: string;
   label: string;
-  type?: string;
-  disabled?: boolean;
-  required?: boolean;
 }
 
 const Input: FC<InputProps> = ({
     id,
     label,
-    type = 'text',
-    disabled,
-    required
+    ...props
 }) => {
   return (
     <div className='w-full relative'>
+
            <input
                 id={id}
-                disabled={disabled}
-                placeholder=" "
-                type={type}
                 className="
                 peer
                 w-full
@@ -36,6 +30,9 @@ const Input: FC<InputProps> = ({
                 disabled:opacity-70
                 disabled:cursor-not-allowed
                 "
+           
+                {...props}
+
             />
             <label
                 className='
@@ -52,11 +49,15 @@ const Input: FC<InputProps> = ({
                     peer-placeholder-shown:translate-y-0 
                     peer-focus:scale-75
                     peer-focus:-translate-y-4
+                    text-zinc-400
                     '
             >
-                {label}
+               {label}
             </label>
     </div>
+
+
+
 )
 }
 

@@ -8,12 +8,14 @@ type AppointmentModalProps = {
   onClose: () => void;
 };
 
+
+
 const AppointmentModal: FC<AppointmentModalProps> = ({open, onClose}) => {
   return (
     <>
-<Modal title="Appointment" onClose={onClose} open={open}>
- <StepperModal />
-  </Modal>
+<Modal title="Appointment" onClose={onClose} open={open} />
+
+
 </>
 )
 }
