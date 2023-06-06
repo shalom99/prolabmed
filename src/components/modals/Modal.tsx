@@ -38,7 +38,7 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
       return { ...prev, ...fields };
     });
   }
-  const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next, resetStep } =
+  const { currentStepIndex, step, isFirstStep, isLastStep, back, next, resetStep } =
     useMultistepForm([
       <UserForm {...data} key={1} updateFields={updateFields} />,
       <ServicesForm {...data} key={2} updateFields={updateFields} />,
@@ -79,12 +79,12 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
     <>
       {/* modal background */}
       <div className="fixed inset-0 backdrop-blur-xl z-30 flex justify-center items-center">
-        <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 h-auto lg:h-auto md:h-auto bg-white px-5 py-5 rounded-md shadow-xl">
+        <div className="relative mx-4 w-full md:w-4/6 lg:w-3/6 xl:w-2/5 h-auto lg:h-auto md:h-auto bg-white px-5 py-5 rounded-md shadow-xl border-2">
           {/* modal content */}
 
-          <div className="flex justify-between h-full items-center py-4">
-            <button onClick={onCloseModal}>
-              <BiX size={25}  className="ml-5 text-primarytext" />
+          <div className="relative flex justify-between h-full items-center py-4">
+            <button className="absolute left-5" onClick={onCloseModal}>
+              <BiX size={25}  className=" text-primarytext" />
               </button>
             <h3 className="grow text-center">{title}</h3>
           </div>
