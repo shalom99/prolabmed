@@ -50,7 +50,7 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
     if (!isLastStep) {
       return next();
     } else {
-      toast.success("Appointment Creation Success");
+      toast.success("Appointment Creation Successful");
       setData(INITIAL_DATA);
       resetStep();
       onCloseModal();
@@ -93,9 +93,9 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
           <div className="relative w-full h-auto">
 
             <div id="stepperLevel" className="grid grid-cols-3 gap-5 py-5">
-              <div className={`${currentStepIndex == 0 ? 'border-accent': 'border-black'} border-b-4`} />
-              <div className={`${currentStepIndex == 1 ? 'border-accent': 'border-black'} border-b-4`} />
-              <div className={`${currentStepIndex == 2 ? 'border-accent': 'border-black'} border-b-4`} />
+              <div className={`${currentStepIndex == 0 ? 'border-accent border-b-4': 'border-black border-b-2'}`} />
+              <div className={`${currentStepIndex == 1 ? 'border-accent border-b-4': 'border-black border-b-2'}`} />
+              <div className={`${currentStepIndex == 2 ? 'border-accent border-b-4': 'border-black border-b-2'}`} />
             </div>
 
             <div className="mx-auto h-auto ">
