@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import Modal from './Modal'
-import StepperModal from './StepperModal';
+
 
 type AppointmentModalProps = {
   open: boolean;

@@ -6,7 +6,7 @@ import { useState } from "react";
 import { BiMenuAltRight, BiX, BiDialpad } from "react-icons/bi";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import AppointmentModal from "./modals/AppointmentModal";
-import StepperModal from "./modals/StepperModal";
+
 
 
 

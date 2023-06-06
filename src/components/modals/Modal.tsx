@@ -40,9 +40,9 @@ const Modal: FC<ModalProps> = ({ title, open, onClose }) => {
   }
   const { steps, currentStepIndex, step, isFirstStep, isLastStep, back, next, resetStep } =
     useMultistepForm([
-      <UserForm {...data} updateFields={updateFields} />,
-      <ServicesForm {...data} updateFields={updateFields} />,
-      <ConfirmForm {...data} updateFields={updateFields} />,
+      <UserForm {...data} key={1} updateFields={updateFields} />,
+      <ServicesForm {...data} key={2} updateFields={updateFields} />,
+      <ConfirmForm {...data} key={3} updateFields={updateFields} />,
     ]);
 
   function onSubmit(e: FormEvent) {
