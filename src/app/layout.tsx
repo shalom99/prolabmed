@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Header from '@/components/headers/Header'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer'
@@ -16,8 +16,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-
   
   return (
     <html lang="en">
@@ -25,8 +23,8 @@ export default function RootLayout({
         <ToasterProvider />
         <Header />
         {children}
-        <Footer />
- 
+        {/* <Footer />
+  */}
         </body>
     </html>
   )

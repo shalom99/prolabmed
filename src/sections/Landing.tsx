@@ -35,7 +35,7 @@ export default function Landing() {
             <button onClick={() => setIsOPen(true)} className="grow lg:grow-0 text-center lg:px-5 text-sm font-bold bg-primarybg text-primarytext py-4 rounded-lg hover:bg-darkerbg hover:text-white duration-500">
               APPOINTMENT
             </button>
-            <Link href="/results" className="grow lg:grow-0 lg:px-5 text-center text-sm font-bold bg-primarybg text-primarytext py-4 rounded-lg hover:bg-darkerbg hover:text-white duration-500">
+            <Link href="/results/login" className="grow lg:grow-0 lg:px-5 text-center text-sm font-bold bg-primarybg text-primarytext py-4 rounded-lg hover:bg-darkerbg hover:text-white duration-500">
               ONLINE RESULTS
             </Link>
           </div>

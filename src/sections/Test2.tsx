@@ -6,7 +6,7 @@ type TestProps = {
   
 }
 
-const Test: FC<TestProps> = ({}) => {
+const Test2: FC<TestProps> = ({}) => {
   const {count, increaseCount} = useCounter()
 
 
@@ -18,4 +18,4 @@ const Test: FC<TestProps> = ({}) => {
 )
 }
 
-export default Test
+export default Test2

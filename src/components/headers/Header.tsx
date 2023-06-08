@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BiMenuAltRight, BiX, BiDialpad } from "react-icons/bi";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import AppointmentModal from "./modals/AppointmentModal";
+import AppointmentModal from "../modals/AppointmentModal";
 
 
 
@@ -14,10 +14,15 @@ export default function Header() {
   const [isOpen, setIsOPen] = useState(false)  
   const [navbarOpen, setNavbarOpen] = useState(false);
   const pathname = usePathname();
+  const showHeader = pathname === '/results/dashboard'
 
   function openAppointment() {
     setNavbarOpen(false) 
     setIsOPen(true)
+  }
+
+  if(showHeader){
+    return null;
   }
 
   return (
@@ -72,7 +77,7 @@ export default function Header() {
               Appointment
             </button>
             <Link
-              href="/results"
+              href="/results/login"
               className="border-b pb-5 font-semibold"
               onClick={() => setNavbarOpen(false)}
             >
@@ -115,7 +120,7 @@ export default function Header() {
             Appointment
           </button>
 
-          <Link href="/results" className={pathname == '/results' ? "text-accent" : "hover:text-accent duration-500" }>
+          <Link href="/results" className={pathname == '/results/login' ? "text-accent" : "hover:text-accent duration-500" }>
             Online Results
           </Link>
 
