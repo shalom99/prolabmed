@@ -10,7 +10,6 @@ import Testimonials from '@/sections/Testimonials'
 export default function Home() {
   return (
     <main>
-  
       <Landing />
       <Accredited/>
       <Landing_about />
