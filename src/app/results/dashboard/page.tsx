@@ -9,7 +9,7 @@ const page: FC<pageProps> = ({}) => {
   return (
     <>
     <DashboardHeader />
-     <div>Dashboard page</div>
+     <div>Online results Dashboard page</div>
      </>
 )
 }
