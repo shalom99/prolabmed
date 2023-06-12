@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 
 import CredentialsProvider from "next-auth/providers/credentials";
-import prisma from "@/lib/prisma";
+// import prisma from "@/lib/prisma";
 
 export const authOptions = {
   // Configure one or more authentication providers
