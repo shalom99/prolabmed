@@ -40,7 +40,6 @@ export default function DashboardHeader() {
             <GrPersonalComputer size={30} />
             <h1>Online Results</h1>
           </div>
-     
         </div>
 
         <nav className="bg-white flex flex-col gap-y-5 py-2 pl-10">
@@ -55,7 +54,6 @@ export default function DashboardHeader() {
 
         </nav>
 
-        <div></div>
       </div>
   
 
