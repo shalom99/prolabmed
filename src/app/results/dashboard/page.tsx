@@ -1,21 +1,18 @@
 'use client'
-import DashboardHeader from '@/components/headers/DashboardHeader'
+
 import { format } from 'date-fns'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC, useState } from 'react'
+import { useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { BsFiletypePdf } from 'react-icons/bs'
 import { GrPersonalComputer } from 'react-icons/gr'
 import { twMerge } from "tailwind-merge";
-type pageProps = {
-  
-}
 
-const page: FC<pageProps> = ({}) => {
+
+export default function Page() {
   const currentDate = format(new Date(), "yyyy-MM-dd")
-  const [navbarOpen, setNavbarOpen] = useState(false);
   const [sideMenuOpen, setSideMenuOpen] = useState(true);
 
   return (
@@ -187,4 +184,3 @@ const page: FC<pageProps> = ({}) => {
 )
 }
 
-export default page
