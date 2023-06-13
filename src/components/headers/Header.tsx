@@ -120,7 +120,7 @@ export default function Header() {
             Appointment
           </button>
 
-          <Link href="/results" className={pathname == '/results/login' ? "text-accent" : "hover:text-accent duration-500" }>
+          <Link href="/results/login" className={pathname == '/results/login' ? "text-accent" : "hover:text-accent duration-500" }>
             Online Results
           </Link>
 
